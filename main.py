@@ -1,10 +1,10 @@
 from utilities import *
-from glob import glob
+from pathlib import Path
 
 # setup API key
 openai_env_path, openai.api_key = None, None
 cwd = Path.cwd()
-openai_env_path = ""
+openai_env_path = cwd / "openai.env"
 set_open_ai_key(openai_env_path)
 
 #Set up location for pdfs
