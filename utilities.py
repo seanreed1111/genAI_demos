@@ -115,34 +115,3 @@ def bot(history):
     )
     history[-1][1] = res['answer']
     return history
-
-
-with gr.Blocks() as demo:
-    chatbot = gr.Chatbot([], elem_id="chatbot",
-                         label='Resume GPT').style(height=750)
-    with gr.Row():
-        with gr.Column(scale=0.80):
-            txt = gr.Textbox(
-                show_label=False,
-                placeholder="Enter text and press enter",
-            ).style(container=False)
-        with gr.Column(scale=0.10):
-            submit_btn = gr.Button(
-                'Submit',
-                variant='primary'
-            )
-        with gr.Column(scale=0.10):
-            clear_btn = gr.Button(
-                'Clear',
-                variant='stop'
-            )
-
-    txt.submit(add_text, [chatbot, txt], [chatbot, txt]).then(
-        bot, chatbot, chatbot
-    )
-
-    submit_btn.click(add_text, [chatbot, txt], [chatbot, txt]).then(
-        bot, chatbot, chatbot
-    )
-
-    clear_btn.click(lambda: None, None, chatbot, queue=False)
