@@ -1,0 +1,7 @@
+langchain
+faiss-cpu
+chromadb
+openai
+tiktoken
+gradio
+pypdf
