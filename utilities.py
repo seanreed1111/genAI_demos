@@ -29,7 +29,7 @@ def set_open_ai_key(env_path=None):
   return False
 
 
-def load_resumes(path, skip_pages):
+def load_pdfs(path, skip_pages=0):
   loader = PyPDFLoader(path)
   pages = loader.load_and_split()
   pages_clean = pages[skip_pages:]
