@@ -12,7 +12,7 @@ set_open_ai_key(openai_env_path)
 pdf_uris = Path(cwd, "Prescribing-Info", "accupril_quinapril.pdf")
 
 # actual resumes start on page 2 of this pdf compilation
-drug1 = load_pdfs(pdf_uris)
+drug1 = load_pdfs(str(pdf_uris))
 
 create_index(drug1)
 qa = create_conversation()
