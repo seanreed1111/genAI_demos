@@ -1,5 +1,6 @@
 from utilities import *
 from pathlib import Path
+import gradio as gr
 
 # setup API key
 openai_env_path, openai.api_key = None, None
